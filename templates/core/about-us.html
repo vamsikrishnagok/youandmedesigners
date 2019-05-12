@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>About Us</h2>
+						<div class="page_link">
+							<a href="{% url 'core:home' %}">Home</a>
+							<a href="{% url 'core:about' %}">About Us</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+		<section class="sample-text-area">
+				<div class="container">
+					{{ about_us|safe }}
+					
+				</div>
+			</section>
+
+			 <!--================Post Slider Area =================-->
+        <section class="post_slider_area">
+        	<div class="main_title">
+				<h2>{{ work_title|safe }}</h2>
+				<p>{{ work_description|safe }}</p>
+			</div>
+			<div class="post_slider_inner owl-carousel">
+			{% for each in projects %}
+				<div class="item">
+					<div class="post_s_item">
+						<div class="post_img">
+							<img src={{ each.img.url}} alt="">
+						</div>
+						<div class="post_text">
+							<a href="single-blog.html"><h4>{{each.title}}</h4></a>
+							<p>{{each.short_content}}</p>
+							<a class="main_btn" href="#">View Details</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+        </section>
+        <!--================End Post Slider Area =================-->
+		<br>
+		<br>
+        
+       
+       
+        
+      {% endblock %}

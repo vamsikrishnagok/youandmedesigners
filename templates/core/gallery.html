@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>Gallery</h2>
+						<div class="page_link">
+							<a href="{% url 'core:home' %}">Home</a>
+							<a href="{% url 'core:gallery' %}">Image Gallery</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <div class="whole-wrap">
+				<div class="container">
+     
+					<div class="section-top-border">
+						<h3 class="title_color">Image Gallery</h3>
+						<div class="row gallery-item">
+						{% for each in gallery %}
+						
+						
+						<div class="col-md-3">
+								<a href="{{ each.image.url }}" class="img-gal"><div class="single-gallery-image" style="background: url({{ each.image.url }});"></div></a>
+							</div>
+						
+						
+						
+						{% endfor %}
+							
+							
+						</div>
+					</div>
+					</div>
+					</div>
+					
+        
+    {% endblock %}
