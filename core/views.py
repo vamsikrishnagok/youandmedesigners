@@ -78,6 +78,15 @@ def serviceDetail(request,service_id):
     }
     return render(request, 'core/service-details.html',context=context)
 
+def projectDetail(request,work_id):
+       
+    service = OurWork.objects.get(id=work_id)
+    
+    context= {
+        "service":service
+
+    }
+    return render(request, 'core/project-details.html',context=context)
 
 def gallery(request):
     a =Gallery.objects.all()

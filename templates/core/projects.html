@@ -38,7 +38,7 @@
 						<div class="post_text">
 							<a href="single-blog.html"><h4>{{each.title}}</h4></a>
 							<p>{{each.short_content}}</p>
-							<a class="main_btn" href="#">View Details</a>
+							<a class="main_btn" href="{% url 'core:projectDetail' each.id %}">View Details</a>
 						</div>
 					</div>
 				</div>
