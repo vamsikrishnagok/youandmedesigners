@@ -35,7 +35,7 @@
         					<img src={{ each.img.url }} alt="">
         					<h4>{{each.heading}}</h4>
         					<p>{{each.short_content}}</p>
-        					<a class="main_btn" href="#">View Details</a>
+        					<a class="main_btn" href="{% url 'core:serviceDetail' each.id %}">View Details</a>
         				</div>
         			</div>
 					 {% endfor %}

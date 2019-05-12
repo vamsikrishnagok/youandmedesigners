@@ -68,9 +68,38 @@ def ourServices(request):
     }
     return render(request, 'core/services.html',context=context)
 
+def serviceDetail(request,service_id):
+   
+    service = OurServices.objects.get(id=service_id)
+    
+    context= {
+        "service":service
+
+    }
+    return render(request, 'core/service-details.html',context=context)
+
+
 def gallery(request):
     a =Gallery.objects.all()
     context = {
         "gallery":a
     }
     return render(request, 'core/gallery.html',context=context)
+    
+
+def contactUs(request):
+    if request.method == "POST":
+        c = Contact()        
+        c.name = request.POST["name"]
+        c.phone = request.POST["phone"]
+        c.email = request.POST["email"]
+        c.description = request.POST["message"]
+        c.save()
+
+    a = Home.objects.get(id=1)
+    
+    context= {
+       'detail':a   
+
+    }
+    return render(request, 'core/contact.html',context=context)

@@ -1,0 +1,15 @@
+astroid==2.2.5
+Django==2.2
+django-summernote==0.8.11.4
+django-tinymce==2.8.0
+isort==4.3.17
+lazy-object-proxy==1.3.1
+mccabe==0.6.1
+Pillow==6.0.0
+pkg-resources==0.0.0
+pylint==2.3.1
+pytz==2019.1
+six==1.12.0
+sqlparse==0.3.0
+typed-ast==1.3.4
+wrapt==1.11.1
